@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/stepper_height"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:background="?selectableItemBackgroundBorderless">
+
+    <TextView
+        android:id="@+id/step_number"
+        android:layout_width="@dimen/step_circle_size"
+        android:layout_height="@dimen/step_circle_size"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/text_primary_inverse"
+        android:background="@drawable/step_circle"
+        android:gravity="center"/>
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+        android:id="@+id/step_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/step_title_margin_top"
+        android:singleLine="true"
+        android:textColor="@color/text_primary_selector"
+        android:textSize="@dimen/text_size_medium"
+
+        tools:text="Step name"/>
+
+</merge>

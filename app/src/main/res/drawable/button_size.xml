@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- checked/enabled state -->
+    <item android:state_checked="true" android:state_enabled="true">
+        <inset xmlns:android="http://schemas.android.com/apk/res/android"
+               android:insetLeft="2dp"
+               android:insetTop="2dp"
+               android:insetRight="2dp"
+               android:insetBottom="2dp">
+            <shape android:shape="rectangle">
+                <corners android:radius="4dp"/>
+                <solid android:color="@color/black" />
+                <padding android:left="12dp" android:right="12dp"/>
+            </shape>
+        </inset>
+    </item>
+
+    <!-- checked/disabled state -->
+    <item android:state_checked="true" android:state_enabled="false">
+        <inset xmlns:android="http://schemas.android.com/apk/res/android"
+               android:insetLeft="2dp"
+               android:insetTop="2dp"
+               android:insetRight="2dp"
+               android:insetBottom="2dp">
+            <shape android:shape="rectangle">
+                <corners android:radius="4dp"/>
+                <solid android:color="#c000" />
+                <padding android:left="12dp" android:right="12dp"/>
+            </shape>
+        </inset>
+    </item>
+
+    <!-- normal state -->
+    <item>
+        <inset xmlns:android="http://schemas.android.com/apk/res/android"
+               android:insetLeft="2dp"
+               android:insetTop="2dp"
+               android:insetRight="2dp"
+               android:insetBottom="2dp">
+            <shape android:shape="rectangle">
+                <corners android:radius="4dp"/>
+                <stroke android:color="@color/divider_light" android:width="1dp"/>
+                <padding android:left="12dp" android:right="12dp"/>
+            </shape>
+        </inset>
+    </item>
+
+    <!-- normal state -->
+    <!--<item>
+        <inset xmlns:android="http://schemas.android.com/apk/res/android"
+               android:insetLeft="@dimen/button_inset_horizontal_material"
+               android:insetTop="@dimen/button_inset_vertical_material"
+               android:insetRight="@dimen/button_inset_horizontal_material"
+               android:insetBottom="@dimen/button_inset_vertical_material">
+            <shape android:shape="rectangle">
+                <corners android:radius="@dimen/control_corner_material" />
+                <solid android:color="@color/NORMAL_STATE_COLOR" />
+                <padding android:left="@dimen/button_padding_horizontal_material"
+                         android:top="@dimen/button_padding_vertical_material"
+                         android:right="@dimen/button_padding_horizontal_material"
+                         android:bottom="@dimen/button_padding_vertical_material" />
+            </shape>
+        </inset>
+    </item>-->
+
+</selector>

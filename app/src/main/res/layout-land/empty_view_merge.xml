@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/empty_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+            android:id="@+id/empty_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="240dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.PiuDonna.EmptyView.Title"
+            android:visibility="gone"
+            app:typeface="Roboto-Medium.ttf"
+            tools:text="No connection"/>
+
+        <!--<com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+            android:id="@+id/empty_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="248dp"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_xlarge"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-light"
+            android:text="No connection"/>-->
+
+        <TextView
+            android:id="@+id/empty_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="240dp"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.PiuDonna.EmptyView.Subtitle"
+            android:visibility="gone"
+            tools:text="When you watch a trip, you'll see it here."/>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:id="@+id/empty_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:maxWidth="240dp"
+            android:visibility="gone"
+            tools:text="Get started"/>
+
+    </LinearLayout>
+
+</merge>

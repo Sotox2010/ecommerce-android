@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="column_span_products_grid">2</integer>
+    <integer name="column_span_subcategories_grid">2</integer>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CheckoutActivity">
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.StepsViewPager
+        android:id="@+id/steps_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_with_stepper"
+        app:swipeable="false"/>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:elevation="@dimen/appbar_elevation">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+            app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+            app:contentInsetStart="@dimen/keyline_content_start"
+            app:titleTextAppearance="@style/TextAppearance.PiuDonna.Toolbar.Title"/>
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.Stepper
+            android:id="@+id/stepper"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stepper_height"
+            android:clipChildren="true"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/include_drop_shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_elevation"
+        android:layout_marginTop="@dimen/margin_with_stepper"/>
+
+</FrameLayout>

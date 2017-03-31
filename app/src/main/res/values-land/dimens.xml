@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tabs_height">40dp</dimen>
+    <dimen name="stepper_height">64dp</dimen>
+    <dimen name="step_title_margin_top">4dp</dimen>
+
+    <dimen name="products_grid_horizontal_margin">60dp</dimen>
+    <dimen name="subcategories_grid_horizontal_margin">60dp</dimen>
+
+    <dimen name="margin_with_tabs">88dp</dimen>
+    <dimen name="margin_with_filterbar">88dp</dimen>
+    <dimen name="margin_with_stepper">112dp</dimen>
+
+    <dimen name="text_size_toolbar_title">18sp</dimen>
+    <dimen name="text_size_toolbar_title_small">16sp</dimen>
+    <dimen name="text_size_toolbar_subtitle">10sp</dimen>
+
+    <dimen name="welcome_logo_width">168dp</dimen>
+    <dimen name="welcome_logo_height">80dp</dimen>
+    <dimen name="welcome_logo_margin">0dp</dimen>
+
+</resources>

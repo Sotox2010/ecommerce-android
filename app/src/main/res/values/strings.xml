@@ -1,0 +1,147 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">PiuDonna Couture</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_shopping_cart">Shopping Cart</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_search">Search products</string>
+    <string name="action_share">Share this product</string>
+    <string name="action_save_address">Save</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_item_store_home">Store home</string>
+    <string name="drawer_item_blog_feed">Newsfeed</string>
+    <string name="drawer_item_wishlist">Wishlist</string>
+    <string name="drawer_item_orders">My orders</string>
+    <string name="drawer_item_address_book">Address book</string>
+    <string name="drawer_item_settings">Settings</string>
+    <string name="drawer_item_sign_out">Sign out</string>
+
+    <!-- Activity labels -->
+    <string name="title_activity_products">PD.Products</string>
+    <string name="title_activity_product_detail">PD.ProductDetail</string>
+    <string name="title_activity_shopping_cart">Shopping Cart</string>
+    <string name="title_activity_checkout">Checkout</string>
+    <string name="title_activity_add_new_address">New Address</string>
+
+    <!-- Fragment labels -->
+    <string name="title_fragment_sign_in">Sign in</string>
+    <string name="title_fragment_sign_up">Create account</string>
+    <string name="title_fragment_forgotten_password">Forgot your password?</string>
+    <string name="title_fragment_store_home"></string>
+    <string name="title_fragment_blog_feed">News</string>
+    <string name="title_fragment_wishlist">Wishlist</string>
+    <string name="title_fragment_address_book">Address book</string>
+    <string name="title_fragment_order_history">My orders</string>
+
+    <!-- Sign in / restore password fragment -->
+    <string name="hint_email">E-mail address</string>
+    <string name="hint_password">Password</string>
+    <string name="ime_action_sign_in">Sign in</string>
+    <string name="button_text_sign_in">Sign in</string>
+    <string name="button_text_forgot_password">Forgot your password?</string>
+    <string name="button_text_reset_password">Reset my password</string>
+
+    <!-- Sign up fragment -->
+    <string name="hint_password_sign_up">Password (min 5 characters)</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_company">Company (optional)</string>
+    <string name="button_text_create_account">Create account</string>
+
+    <!-- Shopping cart activity-->
+    <string name="cart_added_date">Added on <xliff:g example="Nov 14" id="date">%1$s</xliff:g></string>
+    <string name="cart_product_details">Color: <xliff:g example="Blue" id="color">%1$s</xliff:g>\nSize: <xliff:g example="XS" id="size">%2$s</xliff:g>\nQuantity: <xliff:g example="2" id="quantity">%3$d</xliff:g></string>
+    <string name="button_text_checkout">Proceed to checkout <xliff:g id="total">($%1$.2f)</xliff:g></string>
+
+    <!-- Add to cart activity-->
+    <string name="stock_availability"><xliff:g id="stock">%1$d</xliff:g> available</string>
+    <string name="button_text_add_to_cart">Add to cart</string>
+
+    <!-- Add new address activity -->
+    <string name="hint_full_name">Full name</string>
+    <string name="hint_address_1">Address line 1</string>
+    <string name="hint_address_2">Address line 2 (optional)</string>
+    <string name="hint_city">City</string>
+    <string name="hint_state">State/Province/Region</string>
+    <string name="hint_zip_code">ZIP code</string>
+    <string name="hint_phone_number">Phone number</string>
+    <string name="button_text_save">Save</string>
+
+    <!-- Order history fragment -->
+    <string name="order_number">Order #<xliff:g example="00001256-54898023" id="reference">%1$s</xliff:g></string>
+    <string name="order_date">Placed on <xliff:g example="Nov 20, 2015" id="date">%1$s</xliff:g></string>
+    <string name="order_item_count"><xliff:g example="7" id="item_count">%1$d</xliff:g> items</string>
+    <string name="order_total">Order total: <xliff:g example="25.00" id="amount">$%1$.2f</xliff:g></string>
+    <string name="order_status">Status: <xliff:g example="Approved" id="status">%1$s</xliff:g></string>
+
+    <!-- Checkout activity -->
+    <string name="step_shipping">Shipping</string>
+    <string name="step_payment">Payment</string>
+    <string name="step_review">Review</string>
+
+    <!-- Checkout: Shipping fragment -->
+    <string name="button_text_proceed_payment">Proceed to payment</string>
+
+    <!-- Checkout: Payment fragment -->
+    <string name="hint_card_number">Card number</string>
+    <string name="hint_card_exp_date">MM/YY</string>
+    <string name="hint_card_cvv">Security code</string>
+    <string name="hint_card_holder">Name on card</string>
+    <string name="button_text_proceed_review">Proceed to review</string>
+
+    <!-- Checkout: Review fragment -->
+    <string name="text_phone">Phone: <xliff:g example="+1 (305) 185.9685" id="phone_number">%1$s</xliff:g></string>
+    <string name="order_summary_labels">Items <xliff:g example="?" id="item_count">(%1$d)</xliff:g>\nShipping &amp; handling\nTotal before tax\nEstimated tax</string>
+    <string name="label_order_total">Order total</string>
+    <string name="button_text_place_order">Place order</string>
+
+    <!-- Navigation drawer header -->
+    <string name="guest_user">Guest User</string>
+    <string name="tap_to_sign_in">Tap to Sign In</string>
+
+    <!-- Sections -->
+    <string name="title_section_description">Description</string>
+    <string name="title_section_available_colors">Available colors</string>
+    <string name="title_section_specs">Specifications</string>
+    <string name="title_section_size">Size</string>
+    <string name="title_section_color">Color</string>
+    <string name="title_section_quantity">Quantity</string>
+    <string name="title_section_shipping">Shipping address</string>
+    <string name="title_section_payment">Payment information</string>
+    <string name="title_section_order_details">Order details</string>
+    <string name="title_section_order_summary">Order summary</string>
+
+    <!-- Sync adapter framework related -->
+    <string name="content_authority">com.smartsecurity.android.piudonnacouture.provider</string>
+    <string name="account_type">piudonnacouture.smartsecurity.com</string>
+    <string name="provider_label">@string/app_name</string>
+
+    <!-- Placeholder strings -->
+    <string name="placeholder_lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Integer nec eleifend arcu, eu convallis nisi. Etiam bibendum,
+        tellus nec ultricies suscipit, metus justo fringilla urna, non mollis tortor libero non enim.
+        Mauris sit amet venenatis risus, at ullamcorper ligula. Maecenas adipiscing non odio ut
+        hendrerit. Phasellus pharetra id sapien laoreet sagittis. Etiam mattis bibendum elit.
+        Vestibulum rutrum a libero eget facilisis. Duis tempor quam velit, at viverra tellus
+        faucibus ut. Mauris venenatis odio sed lorem dignissim, vitae tristique arcu sagittis.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+</resources>

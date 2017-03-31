@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_small"
+    android:foreground="?selectableItemBackground"
+    app:cardPreventCornerOverlap="false"
+    app:cardBackgroundColor="@color/card"
+    app:cardElevation="@dimen/card_elevation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.AspectRatioImageView
+            android:id="@+id/product_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:aspectRatio="@dimen/aspect_ratio_1_1"/>
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+            android:id="@+id/product_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_large"
+            android:layout_marginRight="@dimen/spacing_large"
+            android:layout_below="@+id/product_image"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary_selector"
+            android:text="Product title"
+            app:typeface="Roboto-Medium.ttf"/>
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+            android:id="@+id/product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_large"
+            android:layout_marginLeft="@dimen/spacing_large"
+            android:layout_marginRight="@dimen/spacing_large"
+            android:layout_below="@+id/product_title"
+            android:layout_alignParentBottom="true"
+            android:gravity="end|bottom"
+            android:singleLine="true"
+            android:textSize="13sp"
+            android:textColor="?colorAccent"
+            android:text="$10.50"/>
+
+        <!--<FrameLayout
+            android:id="@+id/button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_image"
+            >
+
+            <ImageButton
+                android:id="@+id/actions_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>-->
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

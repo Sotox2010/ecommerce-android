@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="48dp"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:background="?actionBarItemBackground">
+
+    <ImageView
+        android:id="@+id/shopping_cart_icon"
+        android:src="@drawable/ic_action_shopping_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="0dp"/>
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+        android:id="@+id/shopping_cart_badge"
+        android:layout_width="18dp"
+        android:textSize="10sp"
+        android:textColor="#ffffffff"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:layout_alignTop="@id/shopping_cart_icon"
+        android:layout_alignRight="@id/shopping_cart_icon"
+        android:layout_alignEnd="@id/shopping_cart_icon"
+        android:layout_marginRight="-4dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginTop="-6dp"
+        android:background="@drawable/shopping_cart_badge"
+        android:visibility="invisible"
+        app:typeface="Roboto-Medium.ttf"/>
+
+</RelativeLayout>

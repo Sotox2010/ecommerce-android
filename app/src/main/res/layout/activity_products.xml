@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/products_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingBottom="@dimen/spacing_small"
+        android:paddingLeft="@dimen/products_grid_horizontal_margin"
+        android:paddingRight="@dimen/products_grid_horizontal_margin"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"/>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:elevation="@dimen/appbar_elevation">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+            app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+            app:contentInsetStart="@dimen/keyline_content_start">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
+
+                <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.PiuDonna.Toolbar.Title.Small"
+                    app:typeface="Roboto-Medium.ttf"
+                    tools:text="Category"/>
+
+                <TextView
+                    android:id="@+id/toolbar_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_disable"
+                    android:textAppearance="@style/TextAppearance.PiuDonna.Toolbar.Subtitle"
+                    android:singleLine="true"
+                    tools:text="Subcategory"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/filters_box"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/filterbar_height"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/keyline_content_start_minus_16dp"
+            android:paddingStart="@dimen/keyline_content_start_minus_16dp"
+            android:paddingRight="@dimen/keyline_margin"
+            android:paddingEnd="@dimen/keyline_margin"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/size_filter_spinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?selectableItemBackground"
+                android:dropDownSelector="?selectableItemBackground"/>
+
+            <Spinner
+                android:id="@+id/price_filter_spinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?selectableItemBackground"
+                android:dropDownSelector="?selectableItemBackground"/>
+
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/include_drop_shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_elevation"
+        android:layout_marginTop="?actionBarSize"/>
+
+</FrameLayout>

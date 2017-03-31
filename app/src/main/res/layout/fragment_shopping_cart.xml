@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingBottom="?actionBarSize"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:clipToPadding="false"/>
+
+    <Button
+        style="@style/Widget.PiuDonna.Button.Default"
+        android:id="@+id/checkout_button"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:text="Proceed to Checkout"/>
+
+    <ViewStub
+        android:id="@+id/stub_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout="@layout/empty_view"/>
+
+</FrameLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_large">
+
+    <TextView
+        android:id="@+id/product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_medium_large"
+        android:textColor="@color/text_primary_selector"
+        android:textStyle="bold"
+        tools:text="My awesome product title"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/spacing_medium">
+
+            <TextView
+                android:id="@+id/product_specs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_gravity="top|start"
+                android:textSize="@dimen/text_size_medium"
+                android:text="@string/cart_product_details"
+                android:lineSpacingMultiplier="1.2"/>
+
+            <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:gravity="end"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="?colorAccent"
+                app:typeface="Roboto-Medium.ttf"
+                tools:text="$10.50"/>
+
+    </FrameLayout>
+
+</LinearLayout>

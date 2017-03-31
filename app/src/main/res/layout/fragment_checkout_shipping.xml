@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/spacing_large"
+        android:paddingBottom="@dimen/margin_with_button"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:clipToPadding="false"
+        android:listSelector="@null"
+        android:choiceMode="singleChoice"
+        tools:listitem="@layout/list_item_address"/>
+
+    <Button
+        style="@style/Widget.PiuDonna.Button.Default"
+        android:id="@+id/proceed_to_payment_button"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/spacing_medium_large"
+        android:enabled="false"
+        android:text="@string/button_text_proceed_payment"/>
+
+    <ViewStub
+        android:id="@+id/stub_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout="@layout/empty_view"/>
+
+    <!--<include layout="@layout/empty_view"
+        android:id="@android:id/empty"/>-->
+
+</FrameLayout>

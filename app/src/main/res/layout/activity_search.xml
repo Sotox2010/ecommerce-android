@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/empty_view"/>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/appbar_elevation">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+            app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+            app:contentInsetStart="@dimen/keyline_content_start">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/search_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingRight="@dimen/spacing_medium"
+                    android:paddingEnd="@dimen/spacing_medium"
+                    android:background="@null"
+                    android:textSize="@dimen/text_size_large"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_disable"
+                    android:singleLine="true"
+                    android:hint="Search products"/>
+
+                <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
+                    android:id="@+id/clear_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_close"
+                    android:padding="@dimen/spacing_medium"
+                    android:background="@drawable/selectable_item_circle_background"
+                    android:visibility="gone"
+                    app:tint="@color/icon_system_default"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/include_drop_shadow_view"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/appbar_elevation"
+             android:layout_marginTop="?actionBarSize"/>
+
+</FrameLayout>

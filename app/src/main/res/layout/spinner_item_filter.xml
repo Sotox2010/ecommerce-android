@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="48dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/spacing_large"
+    android:paddingStart="@dimen/spacing_large"
+    android:paddingRight="@dimen/spacing_large"
+    android:paddingEnd="@dimen/spacing_large"
+    android:singleLine="true"
+    android:ellipsize="end"
+    android:textSize="@dimen/text_size_medium_large"
+    android:textColor="@color/text_primary"
+    android:drawableRight="@drawable/spinner_triangle"
+    android:drawableEnd="@drawable/spinner_triangle"
+    android:drawablePadding="@dimen/spacing_medium"
+    android:text="Awesome"/>

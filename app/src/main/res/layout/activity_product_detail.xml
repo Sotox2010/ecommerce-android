@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.SynchronizedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/scroll_view_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.smartsecurity.android.piudonnacouture.ui.widget.AspectRatioFrameLayout
+                    android:id="@+id/image_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="@drawable/photo_scrim"
+                    app:aspectRatio="@dimen/aspect_ratio_1_1">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/image_slider_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </com.smartsecurity.android.piudonnacouture.ui.widget.AspectRatioFrameLayout>
+
+                <View
+                    android:id="@+id/appbar_placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/details_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/spacing_large"
+                    android:paddingRight="@dimen/spacing_large"
+                    android:paddingBottom="@dimen/margin_with_fab"
+                    android:divider="@drawable/spacer_large"
+                    android:showDividers="beginning|middle"
+                    android:background="@color/window_background"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <android.support.v7.widget.CardView
+                        style="@style/Widget.PiuDonna.CardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:divider="@drawable/divider_light"
+                            android:showDividers="middle">
+
+                            <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                                style="@style/PiuDonna.Section.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:text="@string/title_section_available_colors"/>
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clipToPadding="false"
+                                android:scrollbars="none">
+
+                                <RadioGroup
+                                    android:id="@+id/color_radio_group"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:layout_marginTop="@dimen/spacing_large"
+                                    android:layout_marginBottom="@dimen/spacing_large"
+                                    android:orientation="horizontal"
+                                    android:divider="@drawable/spacer_medium_large_horiz"
+                                    android:showDividers="beginning|middle|end"
+                                    android:gravity="center"/>
+
+                            </HorizontalScrollView>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        style="@style/Widget.PiuDonna.CardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:divider="@drawable/divider_light"
+                            android:showDividers="middle">
+
+                            <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                                style="@style/PiuDonna.Section.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:text="@string/title_section_description"/>
+
+                            <TextView
+                                android:id="@+id/description_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_medium"
+                                android:lineSpacingMultiplier="1.2"
+                                android:textColor="@color/text_primary"
+                                android:padding="@dimen/keyline_margin"
+                                android:text="@string/placeholder_lorem_ipsum"/>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Title/price bar (floating; position determined at run time as the content view scrolls) -->
+            <FrameLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:clipChildren="false">
+
+                <View
+                    android:id="@+id/header_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?colorPrimary"/>
+
+                <LinearLayout
+                    android:id="@+id/header_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/spacing_large"
+                    android:paddingBottom="@dimen/spacing_large"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                        android:id="@+id/product_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/keyline_content_start"
+                        android:layout_marginStart="@dimen/keyline_content_start"
+                        android:layout_marginRight="@dimen/keyline_margin"
+                        android:layout_marginEnd="@dimen/keyline_margin"
+                        android:textSize="@dimen/text_size_medium_large"
+                        android:textColor="@color/text_primary"
+                        app:typeface="Roboto-Medium.ttf"
+                        tools:text="LG Google Nexus 5X 32GB Smartphone"/>
+
+                    <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                        android:id="@+id/product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/keyline_content_start"
+                        android:layout_marginStart="@dimen/keyline_content_start"
+                        android:textColor="?colorAccent"
+                        android:textSize="@dimen/text_size_medium_large"
+                        app:typeface="Roboto-Medium.ttf"
+                        tools:text="$10.00"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </com.smartsecurity.android.piudonnacouture.ui.widget.SynchronizedScrollView>
+
+    <ViewStub
+        android:id="@+id/stub_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout="@layout/empty_view"/>
+
+    <ProgressBar
+        style="?indeterminateProgressStyle"
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_to_cart_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/keyline_margin"
+        android:src="@drawable/ic_add_to_cart"
+        app:fabSize="normal"
+        app:borderWidth="1dp"
+        app:rippleColor="#6fff"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+        android:fitsSystemWindows="true"
+        app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+        app:contentInsetStart="@dimen/keyline_content_start"/>
+
+</FrameLayout>

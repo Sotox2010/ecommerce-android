@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/ic_credit_card_visa"
+        android:maxLevel="0"/>
+
+    <item
+        android:drawable="@drawable/ic_credit_card_master_card"
+        android:maxLevel="1"/>
+
+    <item
+        android:drawable="@drawable/ic_credit_card_amex"
+        android:maxLevel="2"/>
+
+    <item
+        android:drawable="@drawable/ic_credit_card"
+        android:maxLevel="10000"/>
+
+</level-list>

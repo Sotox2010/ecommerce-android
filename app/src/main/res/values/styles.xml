@@ -1,0 +1,131 @@
+<resources>
+
+    <style name="ThemeOverlay.PiuDonna.AppBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/icon_system_default</item>   
+    </style>
+
+    <style name="ThemeOverlay.PiuDonna.Popup" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!--<style name="ThemeOverlay.PiuDonna.Button.Colored" parent="ThemeOverlay.AppCompat.Dark">
+        &lt;!&ndash;<item name="colorAccent">@color/white</item>&ndash;&gt;
+        <item name="colorButtonNormal">@color/theme_accent</item>
+        <item name="colorControlHighlight">#6fff</item>
+    </style>-->
+
+    <style name="Widget.PiuDonna.ActionButton" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="android:minWidth">48dp</item>
+    </style>
+
+    <style name="Widget.PiuDonna.ActionButton.Overflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="Widget.PiuDonna.CardView" parent="">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardPreventCornerOverlap">false</item>
+    </style>
+
+    <style name="Widget.PiuDonna.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/text_primary_selector</item>
+        <item name="android:textSize">@dimen/text_size_medium_large</item>
+        <item name="android:textColorHint">@color/text_disable</item>
+    </style>
+
+    <style name="Widget.PiuDonna.EditText.FloatingLabel">
+        <item name="android:paddingTop">@dimen/spacing_small</item>
+    </style>
+
+    <style name="Widget.PiuDonna.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.PiuDonna.Button.Default" parent="Widget.PiuDonna.Button">
+        <!--<item name="android:theme">@style/ThemeOverlay.PiuDonna.Button.Colored</item>-->
+        <item name="android:textColor">@color/text_primary_selector_inverse</item>
+        <item name="android:background">@drawable/button_default</item>
+    </style>
+
+    <style name="Widget.PiuDonna.Button.Gray" parent="Widget.PiuDonna.Button">
+        <item name="android:textColor">@color/text_primary_selector_inverse</item>
+        <item name="android:background">@drawable/button_gray</item>
+    </style>
+
+    <style name="Widget.PiuDonna.Button.White" parent="Widget.PiuDonna.Button">
+        <item name="android:textColor">@color/text_accent_selector</item>
+        <item name="android:background">@drawable/button_white</item>
+    </style>
+
+    <style name="Widget.PiuDonna.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextColor">@color/text_disable</item>
+        <item name="tabSelectedTextColor">?colorAccent</item>
+        <item name="android:background">?colorPrimary</item>
+    </style>
+
+    <style name="PiuDonna.Section.Title" parent="">
+        <item name="android:paddingLeft">@dimen/spacing_large</item>
+        <item name="android:paddingRight">@dimen/spacing_large</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.PiuDonna.SectionTitle</item>
+        <item name="typeface">Roboto-Medium.ttf</item>
+    </style>
+
+    <style name="Widget.PiuDonna.EmptyView" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="Widget.PiuDonna.FloatingActionButton" parent="Widget.Design.FloatingActionButton">
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginRight">@dimen/spacing_medium</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:tint">@color/white</item>
+        <item name="borderWidth">0dp</item>
+        <item name="rippleColor">#6fff</item>
+    </style>
+
+    <!-- Text Appearances -->
+
+    <style name="TextAppearance.PiuDonna" parent="TextAppearance.AppCompat"/>
+
+    <style name="TextAppearance.PiuDonna.EmptyView">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.PiuDonna.EmptyView.Title">
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.PiuDonna.EmptyView.Subtitle">
+        <item name="android:textSize">@dimen/text_size_medium_large</item>
+        <item name="android:textColor">@color/text_disable</item>
+    </style>
+
+    <style name="TextAppearance.PiuDonna.SectionTitle">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">?colorAccent</item>
+    </style>
+
+
+    <style name="TextAppearance.PiuDonna.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_size_toolbar_title</item>
+    </style>
+
+    <style name="TextAppearance.PiuDonna.Toolbar.Title.Small" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_size_toolbar_title_small</item>
+    </style>
+
+    <style name="TextAppearance.PiuDonna.Toolbar.Subtitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">@dimen/text_size_toolbar_subtitle</item>
+    </style>
+
+</resources>

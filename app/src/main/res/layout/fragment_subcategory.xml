@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/subcategories_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_with_tabs"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingBottom="@dimen/spacing_small"
+        android:paddingLeft="@dimen/subcategories_grid_horizontal_margin"
+        android:paddingRight="@dimen/subcategories_grid_horizontal_margin"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"/>
+
+    <!--<FontTextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/text_secondary"
+        android:text="No Subcategories"
+        android:textSize="24sp"
+        app:typeface="Roboto-Medium.ttf"
+        android:visibility="visible"/>-->
+
+    <ProgressBar
+        style="?indeterminateProgressStyle"
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="?actionBarSize"/>
+
+</FrameLayout>

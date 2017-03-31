@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/spacing_large"
+        android:paddingBottom="@dimen/spacing_large"
+        android:clipToPadding="false">
+
+        <android.support.v7.widget.CardView
+            style="@style/Widget.PiuDonna.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            app:cardCornerRadius="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:divider="@drawable/spacer_large"
+                android:showDividers="beginning|middle|end">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/credit_card_image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginLeft="@dimen/keyline_margin"
+                        android:layout_marginStart="@dimen/keyline_margin"
+                        android:src="@drawable/ic_credit_card_levels"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/card_number_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/keyline_content_start"
+                        android:layout_marginStart="@dimen/keyline_content_start"
+                        android:layout_marginRight="@dimen/keyline_margin"
+                        android:layout_marginEnd="@dimen/keyline_margin"
+                        android:textColorHint="@color/text_disable">
+
+                        <android.support.design.widget.TextInputEditText
+                            style="@style/Widget.PiuDonna.EditText.FloatingLabel"
+                            android:id="@+id/card_number_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_card_number"
+                            android:inputType="phone"
+                            android:nextFocusDown="@+id/exp_date_edit_text"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginLeft="@dimen/keyline_margin"
+                        android:layout_marginStart="@dimen/keyline_margin"
+                        android:src="@drawable/ic_event"
+                        app:tint="@color/icon_system_default"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="@dimen/keyline_content_start"
+                        android:layout_marginStart="@dimen/keyline_content_start"
+                        android:layout_marginRight="@dimen/keyline_margin"
+                        android:layout_marginEnd="@dimen/keyline_margin"
+                        android:baselineAligned="false">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/exp_date_input_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/text_disable">
+
+                            <android.support.design.widget.TextInputEditText
+                                style="@style/Widget.PiuDonna.EditText.FloatingLabel"
+                                android:id="@+id/exp_date_edit_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_card_exp_date"
+                                android:inputType="date"
+                                android:maxLength="5"
+                                android:nextFocusDown="@+id/cvv_edit_text"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/cvv_input_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/text_disable">
+
+                            <android.support.design.widget.TextInputEditText
+                                style="@style/Widget.PiuDonna.EditText.FloatingLabel"
+                                android:id="@+id/cvv_edit_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_card_cvv"
+                                android:inputType="number"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginLeft="@dimen/keyline_margin"
+                        android:layout_marginStart="@dimen/keyline_margin"
+                        android:src="@drawable/ic_person"
+                        app:tint="@color/icon_system_default"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/card_holder_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/keyline_content_start"
+                        android:layout_marginStart="@dimen/keyline_content_start"
+                        android:layout_marginRight="@dimen/keyline_margin"
+                        android:layout_marginEnd="@dimen/keyline_margin"
+                        android:textColorHint="@color/text_disable">
+
+                        <android.support.design.widget.TextInputEditText
+                            style="@style/Widget.PiuDonna.EditText.FloatingLabel"
+                            android:id="@+id/card_holder_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_card_holder"
+                            android:inputType="textCapWords|textPersonName"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            style="@style/Widget.PiuDonna.Button.Default"
+            android:id="@+id/proceed_to_review_button"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:enabled="false"
+            android:text="@string/button_text_proceed_review"/>
+
+    </LinearLayout>
+
+</ScrollView>

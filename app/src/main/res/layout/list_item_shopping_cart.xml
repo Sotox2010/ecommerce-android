@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_medium_large"
+    android:foreground="?selectableItemBackground"
+    app:cardBackgroundColor="@color/card"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardCornerRadius="0dp"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:divider="@drawable/divider_light"
+        android:dividerPadding="@dimen/spacing_large">
+
+        <RelativeLayout
+            android:id="@+id/card_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_large">
+
+            <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                android:id="@+id/product_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/product_image"
+                android:layout_toStartOf="@+id/product_image"
+                android:textSize="@dimen/text_size_medium_large"
+                android:textColor="@color/text_primary_selector"
+                android:textStyle="bold"
+                android:text="Product title"/>
+
+            <TextView
+                android:id="@+id/added_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_disable"
+                android:singleLine="true"
+                android:text="Added on Nov 24"
+                android:layout_below="@+id/product_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/product_image"
+                android:layout_toStartOf="@+id/product_image"/>
+
+            <TextView
+                android:id="@+id/product_specs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/text_size_medium"
+                android:text="@string/cart_product_details"
+                android:layout_below="@+id/added_on"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_toLeftOf="@+id/product_image"
+                android:layout_toStartOf="@+id/product_image"/>
+
+            <com.smartsecurity.android.piudonnacouture.ui.widget.AspectRatioImageView
+                android:id="@+id/product_image"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:background="@drawable/image_placeholder"
+                app:aspectRatio="@dimen/aspect_ratio_1_1"/>
+
+            <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_image"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:textSize="@dimen/text_size_medium_large"
+                android:textColor="?colorAccent"
+                app:typeface="Roboto-Medium.ttf"
+                android:text="$10.50"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/card_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:paddingRight="@dimen/spacing_medium">
+
+            <ImageButton
+                android:id="@+id/wishlist_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end|center_vertical"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete"
+                android:tint="@color/icon_system_default"
+                android:tintMode="src_in"/>
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:layout_gravity="start|center_vertical"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:text="Edit"/>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/remove_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:layout_gravity="start|center_vertical"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:text="Remove"/>
+
+            <!--<ImageButton
+                android:id="@+id/remove_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end|center_vertical"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete"
+                android:tint="@color/icon_system_default"
+                android:tintMode="src_in"/>-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

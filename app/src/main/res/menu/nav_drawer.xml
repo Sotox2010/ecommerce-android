@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/navigation"
+           android:checkableBehavior="single">
+        
+        <item
+            android:id="@+id/nav_item_store_home"
+            android:icon="@drawable/ic_store"
+            android:checked="true"
+            android:title="@string/drawer_item_store_home" />
+
+        <item
+            android:id="@+id/nav_item_blog_feed"
+            android:icon="@drawable/ic_newsfeed"
+            android:title="@string/drawer_item_blog_feed" />
+
+    </group>
+
+    <group android:id="@+id/user_actions"
+           android:checkableBehavior="single">
+
+        <!--<item
+            android:id="@+id/nav_item_wishlist"
+            android:icon="@drawable/ic_wishlist"
+            android:title="@string/drawer_item_wishlist" />-->
+
+        <item
+            android:id="@+id/nav_item_order_history"
+            android:icon="@drawable/ic_orders"
+                android:title="@string/drawer_item_orders" />
+
+        <item
+            android:id="@+id/nav_item_address_book"
+            android:icon="@drawable/ic_address_book"
+            android:title="@string/drawer_item_address_book" />
+
+    </group>
+
+    <group android:id="@+id/actions"
+           android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_action_about"
+            android:title="About us" />
+
+        <item
+            android:id="@+id/nav_action_help"
+            android:title="Help" />
+
+        <!--<item
+            android:id="@+id/nav_action_settings"
+            android:title="@string/drawer_item_settings" />-->
+
+        <item
+            android:id="@+id/nav_action_sign_out"
+            android:title="@string/drawer_item_sign_out" />
+
+    </group>
+
+</menu>

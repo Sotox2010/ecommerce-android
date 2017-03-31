@@ -1,0 +1,11 @@
+<!-- TODO: Remove this file for production. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".ui.MainActivity">
+
+    <item android:id="@+id/action_show_hide"
+          android:orderInCategory="1"
+          android:title="Show/Hide"
+          app:showAsAction="always"/>
+</menu>

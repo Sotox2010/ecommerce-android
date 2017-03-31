@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:paddingBottom="@dimen/margin_with_button"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:clipToPadding="false"/>
+
+    <Button
+        style="@style/Widget.PiuDonna.Button.Default"
+        android:id="@+id/checkout_button"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:visibility="gone"
+        android:text="@string/button_text_checkout"/>
+
+    <ViewStub
+        android:id="@+id/stub_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout="@layout/empty_view"/>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/appbar_elevation">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+            app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+            app:contentInsetStart="@dimen/keyline_content_start"
+            app:titleTextAppearance="@style/TextAppearance.PiuDonna.Toolbar.Title"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/include_drop_shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_elevation"
+        android:layout_marginTop="?actionBarSize"/>
+
+</FrameLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/appbar_elevation">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+            app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+            app:contentInsetStart="@dimen/keyline_content_start">
+
+            <ProgressBar
+                style="?indeterminateProgressStyle"
+                android:id="@+id/toolbar_progress"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="@dimen/keyline_margin"
+                android:layout_marginEnd="@dimen/keyline_margin"
+                android:layout_gravity="center_vertical|end"
+                android:visibility="gone"/>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/include_drop_shadow_view"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/appbar_elevation"
+         android:layout_marginTop="?actionBarSize"/>
+
+</FrameLayout>

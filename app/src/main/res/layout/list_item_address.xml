@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.smartsecurity.android.piudonnacouture.ui.widget.CheckableCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.PiuDonna.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RadioButton
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium_large"
+        android:layout_marginLeft="@dimen/spacing_medium_large"
+        android:layout_marginStart="@dimen/spacing_medium_large"
+        android:duplicateParentState="true"
+        android:clickable="false"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:layout_marginLeft="@dimen/keyline_content_start"
+        android:layout_marginStart="@dimen/keyline_content_start">
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:textSize="@dimen/text_size_medium_large"
+            android:textColor="@color/text_primary_selector"
+            android:textStyle="bold"
+            tools:text="Jesus Soto"/>
+
+        <TextView
+            android:id="@+id/address_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary_selector"
+            tools:text="14505 SW 92ND CT"/>
+
+        <TextView
+            android:id="@+id/city_state_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary_selector"
+            tools:text="MIAMI, FL 33176-7941"/>
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary_selector"
+            tools:text="United States"/>
+
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary_selector"
+            tools:text="Phone: +1 (305) 477-0308"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_light"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/keyline_content_start"
+        android:layout_marginLeft="@dimen/keyline_content_start"/>
+
+</com.smartsecurity.android.piudonnacouture.ui.widget.CheckableCardView>

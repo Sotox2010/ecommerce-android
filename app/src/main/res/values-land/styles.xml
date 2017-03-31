@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="Widget.PiuDonna.EmptyView" parent="">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:divider">@drawable/spacer_large_vert</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+</resources>

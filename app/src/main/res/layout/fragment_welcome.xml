@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_medium"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/welcome_logo_width"
+        android:layout_height="@dimen/welcome_logo_height"
+        android:layout_margin="@dimen/welcome_logo_margin"
+        android:src="@drawable/logo_piudonna_grey"
+        android:layout_gravity="center_horizontal"/>
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.EmptyView
+        android:id="@+id/welcome_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:gravity="center"
+        android:src="@drawable/ic_welcome"
+        android:subtitle="Welcome to PiuDonna Couture™ fashion shopping App."
+        app:action="Skip to home"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:clipChildren="false"
+        android:divider="@drawable/spacer_small_vert"
+        android:showDividers="middle">
+
+        <Button
+            style="@style/Widget.PiuDonna.Button.Gray"
+            android:id="@+id/create_account_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/button_text_create_account"/>
+
+        <Button
+            style="@style/Widget.PiuDonna.Button.Default"
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/button_text_sign_in"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_medium"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="@drawable/welcome_background">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_piudonna_white"
+        android:layout_gravity="center_horizontal"/>
+
+    &lt;!&ndash;<Button
+        style="?borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary_inverse"
+        android:text="Skip"/>&ndash;&gt;
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:clipChildren="false"
+        android:divider="@drawable/spacer_small_vert"
+        android:showDividers="middle">
+
+        <Button
+            style="@style/Widget.PiuDonna.Button.White"
+            android:id="@+id/create_account_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/button_text_create_account"/>
+
+        <Button
+            style="@style/Widget.PiuDonna.Button.Default"
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/button_text_sign_in"/>
+
+    </LinearLayout>
+
+</FrameLayout>-->

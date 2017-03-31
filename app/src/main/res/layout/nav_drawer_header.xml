@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackground">
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.AspectRatioImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/header_background_4"
+        app:aspectRatio="@dimen/aspect_ratio_16_9"/>
+
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#3000"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:background="#0000"
+        android:padding="@dimen/spacing_large">
+
+        <!--<ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="#a4a"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:visibility="gone"/>-->
+
+        <TextView
+            android:id="@+id/header_tile_view"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:background="@drawable/step_circle"
+            android:padding="16dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-light"
+            android:text="PD"
+            android:drawableTop="@drawable/ic_person_white"
+            android:backgroundTint="#9d9d9d"/>
+
+        <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+            android:id="@+id/header_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="Guest User"
+            app:typeface="Roboto-Medium.ttf"/>
+
+        <TextView
+            android:id="@+id/header_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_secondary"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="Tap to Sign In"/>
+
+    </LinearLayout>
+
+    <!--<Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:textColor="@color/white"
+        android:text="Tap to Sign In"
+        android:visibility="gone"/>-->
+
+</FrameLayout>

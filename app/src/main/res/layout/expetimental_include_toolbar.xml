@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_wrapper"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/appbar_elevation">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?colorPrimary"
+        android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+        app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"
+        app:contentInsetStart="@dimen/keyline_content_start"
+        app:titleTextAppearance="@style/TextAppearance.PiuDonna.Toolbar.Title">
+
+        <ProgressBar
+            style="?indeterminateProgressStyle"
+            android:id="@+id/toolbar_progress"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/spacing_medium_large"
+            android:layout_marginRight="@dimen/spacing_medium_large"
+            android:layout_gravity="end|center_vertical"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <include layout="@layout/include_drop_shadow_view"/>
+
+</LinearLayout>

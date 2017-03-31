@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="emptyViewStyle" format="reference" />
+
+    <declare-styleable name="FontView">
+        <attr name="typeface" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TintableView">
+        <attr name="tint" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="AspectRatioView">
+        <attr name="aspectRatio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="EmptyView">
+        <attr name="android:src"/>
+        <attr name="android:title"/>
+        <attr name="android:subtitle"/>
+        <attr name="action" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="NumberSpinner">
+        <attr name="value" format="integer"/>
+        <attr name="minValue" format="integer"/>
+        <attr name="maxValue" format="integer"/>
+        <attr name="android:textAppearance"/>
+        <attr name="android:enabled"/>
+    </declare-styleable>
+
+    <declare-styleable name="StepsViewPager">
+        <attr name="swipeable" format="boolean"/>
+    </declare-styleable>
+
+</resources>

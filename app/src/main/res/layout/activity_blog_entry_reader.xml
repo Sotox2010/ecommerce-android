@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.smartsecurity.android.piudonnacouture.ui.widget.SynchronizedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/scroll_view_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="@drawable/photo_scrim">
+
+                <com.smartsecurity.android.piudonnacouture.ui.widget.AspectRatioImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    app:aspectRatio="@dimen/aspect_ratio_3_2"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_huge"
+                android:layout_marginLeft="@dimen/spacing_huge"
+                android:layout_marginRight="@dimen/spacing_huge"
+                android:textSize="24sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:text="My Awesome Post Title"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_huge"
+                android:layout_marginRight="@dimen/spacing_huge"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_disable"
+                android:text="On Wednesday, January 01"/>
+
+            <com.smartsecurity.android.piudonnacouture.ui.widget.FontTextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_huge"
+                android:layout_marginRight="@dimen/spacing_huge"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="@dimen/spacing_huge"
+                android:lineSpacingMultiplier="1.1"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/text_primary"
+                android:text="@string/placeholder_lorem_ipsum"
+                app:typeface="Alegreya-Regular.otf"/>
+
+        </LinearLayout>
+
+    </com.smartsecurity.android.piudonnacouture.ui.widget.SynchronizedScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.PiuDonna.AppBar"
+        app:popupTheme="@style/ThemeOverlay.PiuDonna.Popup"/>
+
+</FrameLayout>
