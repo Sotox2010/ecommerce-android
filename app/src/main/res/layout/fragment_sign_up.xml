@@ -48,18 +48,20 @@
                     android:id="@+id/first_name_input_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginLeft="@dimen/spacing_large"
                     android:textColorHint="@color/text_disable"
                     app:layout_gravity="fill_horizontal"
                     app:layout_columnWeight="1">
 
                     <android.support.design.widget.TextInputEditText
-                        style="@style/Widget.PiuDonna.EditText.FloatingLabel"
                         android:id="@+id/first_name_edit_text"
+                        style="@style/Widget.PiuDonna.EditText.FloatingLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_first_name"
                         android:inputType="textCapWords"
-                        android:nextFocusDown="@+id/last_name_edit_text"/>
+                        android:nextFocusDown="@+id/last_name_edit_text" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -81,7 +83,7 @@
 
                 </android.support.design.widget.TextInputLayout>
 
-                <android.support.v4.widget.Space
+                <!--<android.support.v4.widget.Space
                     android:layout_width="0dp"
                     android:layout_height="@dimen/spacing_large"
                     app:layout_gravity="fill_horizontal"
@@ -102,6 +104,8 @@
                     android:id="@+id/company_input_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginLeft="@dimen/spacing_large"
                     android:textColorHint="@color/text_disable"
                     app:layout_gravity="fill_horizontal"
                     app:layout_columnSpan="2">
@@ -114,7 +118,7 @@
                         android:hint="@string/hint_company"
                         android:inputType="textCapWords"/>
 
-                </android.support.design.widget.TextInputLayout>
+                </android.support.design.widget.TextInputLayout>-->
 
                 <android.support.v4.widget.Space
                     android:layout_width="0dp"
@@ -137,6 +141,8 @@
                     android:id="@+id/email_input_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginLeft="@dimen/spacing_large"
                     android:textColorHint="@color/text_disable"
                     app:layout_gravity="fill_horizontal"
                     app:layout_columnSpan="2">
@@ -172,6 +178,8 @@
                     android:id="@+id/password_input_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginLeft="@dimen/spacing_large"
                     android:textColorHint="@color/text_disable"
                     app:layout_gravity="fill_horizontal"
                     app:layout_columnSpan="2">
@@ -198,8 +206,8 @@
                     android:id="@+id/tos_checkbox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/spacing_large"
-                    android:paddingStart="@dimen/spacing_large"
+                    android:paddingLeft="@dimen/spacing_huge"
+                    android:paddingStart="@dimen/spacing_huge"
                     android:paddingRight="0dp"
                     android:paddingEnd="0dp"
                     android:textColor="@color/text_primary_selector"
@@ -224,241 +232,3 @@
     </LinearLayout>
 
 </ScrollView>
-
-<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/spacing_large"
-            android:paddingBottom="@dimen/spacing_large"
-            android:clipToPadding="false">
-
-            <android.support.v7.widget.CardView
-                style="@style/Widget.PiuDonna.CardView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:descendantFocusability="beforeDescendants"
-                android:focusableInTouchMode="true"
-                app:cardCornerRadius="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:divider="@drawable/spacer_large"
-                    android:showDividers="beginning|middle|end">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center_vertical"
-                            android:layout_marginLeft="@dimen/keyline_margin"
-                            android:layout_marginStart="@dimen/keyline_margin"
-                            android:src="@drawable/ic_person"
-                            app:tint="@color/icon_system_default"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginLeft="@dimen/keyline_content_start"
-                            android:layout_marginStart="@dimen/keyline_content_start"
-                            android:layout_marginRight="@dimen/keyline_margin"
-                            android:layout_marginEnd="@dimen/keyline_margin"
-                            android:baselineAligned="false">
-
-                            <android.support.design.widget.TextInputLayout
-                                android:id="@+id/first_name_input_layout"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:textColorHint="@color/text_disable">
-
-                                <EditText
-                                    style="@style/Widget.PiuDonna.EditText.FloatingLabel"
-                                    android:id="@+id/first_name_edit_text"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/hint_first_name"
-                                    android:inputType="textCapWords"
-                                    android:nextFocusDown="@+id/last_name_edit_text"/>
-
-                            </android.support.design.widget.TextInputLayout>
-
-                            <android.support.design.widget.TextInputLayout
-                                android:id="@+id/last_name_input_layout"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:textColorHint="@color/text_disable">
-
-                                <EditText
-                                    style="@style/Widget.PiuDonna.EditText.FloatingLabel"
-                                    android:id="@+id/last_name_edit_text"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/hint_last_name"
-                                    android:inputType="textCapWords"/>
-
-                            </android.support.design.widget.TextInputLayout>
-
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center_vertical"
-                            android:layout_marginLeft="@dimen/keyline_margin"
-                            android:layout_marginStart="@dimen/keyline_margin"
-                            android:src="@drawable/ic_business"
-                            app:tint="@color/icon_system_default"/>
-
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/company_input_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/keyline_content_start"
-                            android:layout_marginStart="@dimen/keyline_content_start"
-                            android:layout_marginRight="@dimen/keyline_margin"
-                            android:layout_marginEnd="@dimen/keyline_margin"
-                            android:textColorHint="@color/text_disable">
-
-                            <EditText
-                                style="@style/Widget.PiuDonna.EditText.FloatingLabel"
-                                android:id="@+id/company_edit_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/hint_company"
-                                android:inputType="textCapWords"/>
-
-                        </android.support.design.widget.TextInputLayout>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center_vertical"
-                            android:layout_marginLeft="@dimen/keyline_margin"
-                            android:layout_marginStart="@dimen/keyline_margin"
-                            android:src="@drawable/ic_at"
-                            app:tint="@color/icon_system_default"/>
-
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/email_input_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/keyline_content_start"
-                            android:layout_marginStart="@dimen/keyline_content_start"
-                            android:layout_marginRight="@dimen/keyline_margin"
-                            android:layout_marginEnd="@dimen/keyline_margin"
-                            android:textColorHint="@color/text_disable">
-
-                            <EditText
-                                style="@style/Widget.PiuDonna.EditText.FloatingLabel"
-                                android:id="@+id/email_edit_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/hint_email"
-                                android:inputType="textEmailAddress"/>
-
-                        </android.support.design.widget.TextInputLayout>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.smartsecurity.android.piudonnacouture.ui.widget.TintableImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center_vertical"
-                            android:layout_marginLeft="@dimen/keyline_margin"
-                            android:layout_marginStart="@dimen/keyline_margin"
-                            android:src="@drawable/ic_more_horiz"
-                            app:tint="@color/icon_system_default"/>
-
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/password_input_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/keyline_content_start"
-                            android:layout_marginStart="@dimen/keyline_content_start"
-                            android:layout_marginRight="@dimen/keyline_margin"
-                            android:layout_marginEnd="@dimen/keyline_margin"
-                            android:textColorHint="@color/text_disable">
-
-                            <EditText
-                                style="@style/Widget.PiuDonna.EditText.FloatingLabel"
-                                android:id="@+id/password_edit_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/hint_password"
-                                android:fontFamily="sans-serif-regular"
-                                android:inputType="textPassword"/>
-
-                        </android.support.design.widget.TextInputLayout>
-
-                    </FrameLayout>
-
-                    <!- - TODO: Change the disable state color for this CheckBox. - ->
-<CheckBox
-android:id="@+id/tos_checkbox"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_marginLeft="@dimen/spacing_medium_large"
-android:layout_marginStart="@dimen/spacing_medium_large"
-android:layout_marginRight="@dimen/spacing_large"
-android:layout_marginEnd="@dimen/spacing_large"
-android:paddingLeft="32dp"
-android:paddingStart="32dp"
-android:paddingRight="0dp"
-android:paddingEnd="0dp"
-android:textColor="@color/text_primary_selector"
-android:textSize="@dimen/text_size_medium"
-android:text="I accept terms and conditions."/>
-
-    </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-<Button
-style="@style/Widget.PiuDonna.Button.Default"
-android:id="@+id/create_account_button"
-android:layout_marginTop="12dp"
-android:layout_marginLeft="12dp"
-android:layout_marginRight="12dp"
-android:enabled="false"
-android:text="@string/button_text_create_account"/>
-
-    </LinearLayout>
-
-    </ScrollView>
-
-    </FrameLayout>-->

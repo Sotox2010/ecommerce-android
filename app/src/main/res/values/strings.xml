@@ -114,8 +114,8 @@
     <string name="title_section_order_summary">Order summary</string>
 
     <!-- Sync adapter framework related -->
-    <string name="content_authority">com.smartsecurity.android.piudonnacouture.provider</string>
-    <string name="account_type">piudonnacouture.smartsecurity.com</string>
+    <string name="content_authority">com.jesussoto.android.ecommerce.provider</string>
+    <string name="account_type">com.jesussoto.ecommerce</string>
     <string name="provider_label">@string/app_name</string>
 
     <!-- Placeholder strings -->

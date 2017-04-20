@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
 public class PiuDonnaContract {
 
     public static final String CONTENT_AUTHORITY =
-            "com.smartsecurity.android.piudonnacouture.provider";
+            "com.jesussoto.android.ecommerce.provider";
 
     public static final String CONTENT_TYPE_BASE =
             "vnd.android.cursor.dir/" + CONTENT_AUTHORITY + "/";

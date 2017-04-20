@@ -122,7 +122,7 @@ public class UpdateCartItemActivity extends BaseActivity implements LoaderManage
     }
 
     private void setupFloatingWindow() {
-        int horizontalMargin = getResources().getDimensionPixelSize(R.dimen.spacing_huge);
+        int horizontalMargin = getResources().getDimensionPixelSize(R.dimen.spacing_xlarge);
         int width = getResources().getDisplayMetrics().widthPixels - (horizontalMargin * 2);
 
         setupFloatingWindow(width, WindowManager.LayoutParams.WRAP_CONTENT, 1, 0.5f);

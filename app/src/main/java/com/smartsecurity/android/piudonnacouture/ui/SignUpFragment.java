@@ -47,7 +47,7 @@ public class SignUpFragment extends Fragment {
     private AuthenticatorActivity mActivity;
     private TextInputLayout mFirstNameInputLayout;
     private TextInputLayout mLastNameInputLayout;
-    private TextInputLayout mCompanyInputLayout;
+    //private TextInputLayout mCompanyInputLayout;
     private TextInputLayout mEmailInputLayout;
     private TextInputLayout mPasswordInputLayout;
     private CheckBox mTosCheckBox;
@@ -118,8 +118,8 @@ public class SignUpFragment extends Fragment {
         mLastNameInputLayout.getEditText().addTextChangedListener(mTextWatcher);
         mLastNameInputLayout.getEditText().setOnFocusChangeListener(mFocusChangeListener);
 
-        mCompanyInputLayout = (TextInputLayout) rootView.findViewById(R.id.company_input_layout);
-        mCompanyInputLayout.getEditText().setOnFocusChangeListener(mFocusChangeListener);
+        //mCompanyInputLayout = (TextInputLayout) rootView.findViewById(R.id.company_input_layout);
+        //mCompanyInputLayout.getEditText().setOnFocusChangeListener(mFocusChangeListener);
 
         mEmailInputLayout = (TextInputLayout) rootView.findViewById(R.id.email_input_layout);
         mEmailInputLayout.getEditText().addTextChangedListener(mTextWatcher);
@@ -139,7 +139,7 @@ public class SignUpFragment extends Fragment {
             mSignUpTask.execute(
                     mFirstNameInputLayout.getEditText().getText().toString(),
                     mLastNameInputLayout.getEditText().getText().toString(),
-                    mCompanyInputLayout.getEditText().getText().toString(),
+                    //mCompanyInputLayout.getEditText().getText().toString(),
                     mEmailInputLayout.getEditText().getText().toString(),
                     mPasswordInputLayout.getEditText().getText().toString());
         });
@@ -170,7 +170,7 @@ public class SignUpFragment extends Fragment {
             // state, so the submit button state is restored well. We only need to handle the case
             // of state restoration when the form is fully disabled due to an operation in progress.
             if (mOperationInProgress) {
-                setFormEditable(!mOperationInProgress);
+                setFormEditable(false);
             }
         }
     }
@@ -206,7 +206,7 @@ public class SignUpFragment extends Fragment {
 
         mFirstNameInputLayout.getEditText().setEnabled(editable);
         mLastNameInputLayout.getEditText().setEnabled(editable);
-        mCompanyInputLayout.getEditText().setEnabled(editable);
+        //mCompanyInputLayout.getEditText().setEnabled(editable);
         mEmailInputLayout.getEditText().setEnabled(editable);
         mPasswordInputLayout.getEditText().setEnabled(editable);
         mTosCheckBox.setEnabled(editable);
@@ -235,7 +235,7 @@ public class SignUpFragment extends Fragment {
     private void cleanUpForm() {
         mFirstNameInputLayout.getEditText().setText(null);
         mLastNameInputLayout.getEditText().setText(null);
-        mCompanyInputLayout.getEditText().setText(null);
+        //mCompanyInputLayout.getEditText().setText(null);
         mEmailInputLayout.getEditText().setText(null);
         mPasswordInputLayout.getEditText().setText(null);
         mTosCheckBox.setChecked(false);

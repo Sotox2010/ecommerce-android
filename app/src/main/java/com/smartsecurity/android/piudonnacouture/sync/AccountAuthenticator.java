@@ -24,9 +24,9 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
 
     private static final String TAG = "AccountAuthenticator";
 
-    public static final String ACCOUNT_TYPE = "piudonnacouture.smartsecurity.com";
+    public static final String ACCOUNT_TYPE = "com.jesussoto.ecommerce";
     public static final String ACCOUNT_NAME_SYNC = "Sync Account";
-    public static final String AUTHTOKEN_TYPE = "piudonnacouture.smartsecurity.com.access_token";
+    public static final String AUTHTOKEN_TYPE = "com.jesussoto.ecommerce.access_token";
 
     private final Context mContext;
 

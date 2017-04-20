@@ -20,8 +20,8 @@ public class PiuDonnaDatabase extends SQLiteOpenHelper {
     // NOTE: carefully update onUpgrade() when bumping database versions to make
     // sure user data is saved.
 
-    private static final int DATABASE_VERSION = 1; // app version 0.1
-    //private static final int CUR_DATABASE_VERSION = VER_2015_RELEASE_B;
+    private static final int VERSION_100 = 100; // app version 0.1
+    private static final int CURRENT_DB_VERSION = VERSION_100;
 
     //private final Context mContext;
 
@@ -44,7 +44,7 @@ public class PiuDonnaDatabase extends SQLiteOpenHelper {
         super(context, BuildConfig.DEBUG
                     ? context.getExternalFilesDir(null).getAbsolutePath() + File.separator + DATABASE_NAME
                     : DATABASE_NAME,
-                null, DATABASE_VERSION);
+                null, CURRENT_DB_VERSION);
 
         //Log.w(LOG_TAG, context.getFilesDir().getAbsolutePath());
         Log.w(LOG_TAG, context.getExternalFilesDir(null).getAbsolutePath());

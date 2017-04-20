@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -23,19 +24,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.smartsecurity.android.piudonnacouture.Config;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.smartsecurity.android.piudonnacouture.R;
-import com.smartsecurity.android.piudonnacouture.model.AuthTokenResponse;
-import com.smartsecurity.android.piudonnacouture.model.UserInfo;
 import com.smartsecurity.android.piudonnacouture.sync.AccountAuthenticator;
-import com.smartsecurity.android.piudonnacouture.sync.WebService;
-import com.smartsecurity.android.piudonnacouture.util.SyncUtils;
 
-import retrofit.RetrofitError;
-import retrofit.client.Response;
-import retrofit.mime.TypedByteArray;
+import java.util.concurrent.ExecutionException;
 
 public class SignInFragment extends Fragment {
     private static final String TAG = "SignInFragment";
@@ -50,6 +48,8 @@ public class SignInFragment extends Fragment {
 
     private AuthenticatorActivity mActivity;
     private SignInTask mSignInTask;
+
+    private FirebaseAuth mAuth;
 
     private TextInputLayout mEmailInputLayout;
     private TextInputLayout mPasswordInputLayout;
@@ -110,6 +110,8 @@ public class SignInFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_sign_in, container, false);
 
+        mAuth = FirebaseAuth.getInstance();
+
         mEmailInputLayout = (TextInputLayout) rootView.findViewById(R.id.email_input_layout);
         mEmailInputLayout.getEditText().addTextChangedListener(mTextWatcher);
         mEmailInputLayout.getEditText().setOnFocusChangeListener(mFocusChangeListener);
@@ -152,7 +154,7 @@ public class SignInFragment extends Fragment {
             // state, so the submit button state is restored well. We only need to handle the case
             // of state restoration when the form is fully disabled due to an operation in progress.
             if (mOperationInProgress) {
-                setFormEditable(!mOperationInProgress);
+                setFormEditable(false);
             }
         }
     }
@@ -160,10 +162,19 @@ public class SignInFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
         if (mActivity != null) {
             mActivity.setStatusBarColor(mStatusBarColor);
             mActivity.setActionBarShown(true);
             mActivity.setActionBarTitle(getString(R.string.title_fragment_sign_in));
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
         }
     }
 
@@ -234,9 +245,167 @@ public class SignInFragment extends Fragment {
         mSignInTask.execute(
                 mEmailInputLayout.getEditText().getText().toString(),
                 mPasswordInputLayout.getEditText().getText().toString());
+
+        /*String email = mEmailInputLayout.getEditText().getText().toString();
+        String password = mPasswordInputLayout.getEditText().getText().toString();
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "signInWithEmail:failed", task.getException());
+                            Toast.makeText(getActivity(), "Try again",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });*/
     }
 
+    private FirebaseAuth.AuthStateListener mAuthListener = new FirebaseAuth.AuthStateListener() {
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            if (user != null) {
+                // User is signed in
+                Log.d(TAG, "onAuthStateChanged: User signed in.");
+            } else {
+                // User is signed out, this should never happen in this fragment since there is no
+                // option to sign out, but I want to know if happens, so lets log it.
+                Log.d(TAG, "onAuthStateChanged: User signed out.");
+            }
+        }
+    };
+
     private class SignInTask extends AsyncTask<String, Void, Intent> {
+        private static final String TAG = "SignInTask";
+
+        public static final String JSON_FIELD_ERROR = "error";
+        public static final String JSON_FIELD_ERROR_DESCRIPTION = "error_description";
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            setFormEditable(!(mOperationInProgress = true));
+        }
+
+        @Override
+        protected Intent doInBackground(String... params) {
+            String email = params[0];
+            String password = params[1];
+
+            Bundle extras = new Bundle();
+
+            try {
+                Tasks.await(mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(getActivity(), (@NonNull Task<AuthResult> task) -> {
+                            Log.d(TAG, "signInWithEmail:onComplete: " + task.isSuccessful());
+
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
+                            if (!task.isSuccessful()) {
+                                Log.w(TAG, "signInWithEmail:failed", task.getException());
+                                //Toast.makeText(getActivity(), "Try again", Toast.LENGTH_SHORT).show();
+                            }
+                        }));
+
+                FirebaseUser user = mAuth.getCurrentUser();
+                if (user != null) {
+                    Log.d(TAG, "FirebaseAuth.getCurrentUser: NOT null");
+                    Tasks.await(user.getToken(false).addOnCompleteListener((@NonNull Task<GetTokenResult> task) -> {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "getToken: " + task.getResult().getToken());
+                            extras.putString(AccountManager.KEY_AUTHTOKEN, task.getResult().getToken());
+                        } else {
+                            Log.e(TAG, "getToken: Error getting token.");
+                        }
+                    }));
+
+                    extras.putString(AccountManager.KEY_ACCOUNT_NAME, user.getEmail());
+                    extras.putString(AccountManager.KEY_ACCOUNT_TYPE, AccountAuthenticator.ACCOUNT_TYPE);
+                    extras.putString(AuthenticatorActivity.EXTRA_REFRESH_TOKEN, null);
+                } else {
+                    Log.d(TAG, "FirebaseAuth.getCurrentUser: null");
+                    extras.putString(AuthenticatorActivity.EXTRA_ERROR_MESSAGE,
+                            "Could not get firebase auth token.");
+                }
+
+            } catch (ExecutionException e) {
+                Log.d(TAG, "ExecutionException", e);
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                Log.d(TAG, "InterruptedException", e);
+                e.printStackTrace();
+            }
+
+            /*try {
+                AuthTokenResponse tokenResponse = SyncUtils.sWebService.getAuthToken(
+                        email, password, Config.OAUTH_CLIENT_ID, Config.OAUTH_CLIENT_SECRET,
+                        Config.OAUTH_GRANT_TYPE_PASSWORD);
+
+                // TODO: Get the info of the user signed in.
+                // UserInfo info = SyncUtils.sWebService.getUserInfo(tokenResponse.getAccessToken(), email);
+
+                extras.putString(AccountManager.KEY_ACCOUNT_NAME, email);
+                extras.putString(AccountManager.KEY_ACCOUNT_TYPE, AccountAuthenticator.ACCOUNT_TYPE);
+                extras.putString(AccountManager.KEY_AUTHTOKEN, tokenResponse.getAccessToken());
+                extras.putString(AuthenticatorActivity.EXTRA_REFRESH_TOKEN, tokenResponse.getRefreshToken());
+
+            } catch (RetrofitError error) {
+                error.printStackTrace();
+
+                if (error.getKind() == RetrofitError.Kind.NETWORK) {
+                    extras.putString(AuthenticatorActivity.EXTRA_ERROR_MESSAGE, "No connection.");
+                } else if (error.getKind() == RetrofitError.Kind.HTTP) {
+                    Response response = error.getResponse();
+
+                    String jsonString = new String(((TypedByteArray) response.getBody()).getBytes());
+                    JsonObject errorJson = new JsonParser().parse(jsonString).getAsJsonObject();
+                    extras.putString(AuthenticatorActivity.EXTRA_ERROR_MESSAGE,
+                            errorJson.get(JSON_FIELD_ERROR_DESCRIPTION).getAsString());
+                    Log.d(TAG, "doInBackground() > ErrorJsonResponse: " + jsonString);
+                } else {
+                    extras.putString(AuthenticatorActivity.EXTRA_ERROR_MESSAGE,
+                            error.getLocalizedMessage());
+                }
+            }*/
+
+            Intent result = new Intent();
+            result.putExtras(extras);
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(Intent resultIntent) {
+            super.onPostExecute(resultIntent);
+            Log.d(TAG, "onPostExecute");
+
+            mSignInTask = null;
+            mOperationInProgress = false;
+
+            if (resultIntent.hasExtra(AuthenticatorActivity.EXTRA_ERROR_MESSAGE)) {
+                // Set form as editable only if some error occurred.
+                setFormEditable(!mOperationInProgress);
+
+                Toast.makeText(mActivity,
+                        resultIntent.getStringExtra(AuthenticatorActivity.EXTRA_ERROR_MESSAGE),
+                        Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            mActivity.finishSignIn(resultIntent);
+        }
+    }
+
+
+    /*private class SignInTask extends AsyncTask<String, Void, Intent> {
         private static final String TAG = "SignInTask";
 
         public static final String JSON_FIELD_ERROR = "error";
@@ -313,5 +482,5 @@ public class SignInFragment extends Fragment {
 
             mActivity.finishSignIn(resultIntent);
         }
-    }
+    }*/
 }
